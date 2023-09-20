@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 2px #ccc;
+        }
+        .user-info {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Confirmation</h2>
+        <% users.forEach(function(user) { %>
+            <div class="user-info">
+                <p><strong>Name:</strong> <%= user.firstName %> <%= user.lastName %></p>
+                <p><strong>Email:</strong> <%= user.email %></p>
+                <p><strong>Country:</strong> <%= user.country %></p>
+                <p><strong>State:</strong> <%= user.state %></p>
+                <p><strong>City:</strong> <%= user.city %></p>
+                <p><strong>Gender:</strong> <%= user.gender %></p>
+                <p><strong>Date of Birth:</strong> <%= user.dob.toDateString() %></p>
+                <p><strong>Age:</strong> <%= user.age %> years</p>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>
